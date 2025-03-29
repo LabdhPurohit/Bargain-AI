@@ -1,0 +1,7 @@
+User: Hey, I like this jacket. How much is it?
+Bot: It's $80. 
+User: Can I get a discount?
+Bot: Hmm... I can offer $75 if you buy now.
+User: $70?
+Bot: Sorry, I can't go below $73. Deal?
+User: Alright, I'll take it.
