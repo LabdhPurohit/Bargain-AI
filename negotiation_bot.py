@@ -4,7 +4,7 @@ import time
 
 client = openai.OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key="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",
+    api_key="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",
 )
 
 
@@ -31,7 +31,7 @@ def get_bot_response(user_message: str) -> str:
 
     try:
         completion = client.chat.completions.create(
-            model="google/gemini-2.5-pro-exp-03-25:free",
+            model="google/gemini-2.0-flash-exp:free",
             messages=messages,
             temperature=0.7,
             max_tokens=100
@@ -39,9 +39,20 @@ def get_bot_response(user_message: str) -> str:
         time.sleep(2)
 
 
-        response = completion.choices[0].message.content
+        print("API Response:", completion)
+
+
+        if not completion or not hasattr(completion, "choices") or not completion.choices:
+            return "Error: No valid response from AI model."
+
+
+        response = completion.choices[0].message.content if completion.choices[0].message else "Error: Empty response."
+
         messages.append({"role": "assistant", "content": response})
         return response
+
+    except openai.OpenAIError as e:
+        return f"OpenAI API Error: {str(e)}"
 
     except Exception as e:
         return f"Error: {str(e)}"
