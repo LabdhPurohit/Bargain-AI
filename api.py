@@ -16,7 +16,7 @@ async def chat(user_message: UserMessage):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-# Directly run FastAPI using Python command
+
 def start():
     uvicorn.run("api:app", host="0.0.0.0", port=8000, reload=True)
 
