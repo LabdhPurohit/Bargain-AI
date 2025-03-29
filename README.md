@@ -48,7 +48,7 @@ POST http://localhost:8000/chat/
 ```
 
 ## 🎥 Demo (Optional)
-If available, attach a demo video showcasing the chatbot in action.
+[Demo Video](https://github.com/user-attachments/assets/304db217-d65c-4533-b749-39a25ffa7f0f)
 
 ---
 
